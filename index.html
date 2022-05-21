@@ -1,0 +1,419 @@
+<!-- 	Proyecto pagina web con temario
+		Materia: Arquitectura de Computadoras
+		Autor: Rogelio Fernando Cisneros Garibo 	-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Arquitectura de Computadoras</title>
+		<link rel = "stylesheet" type = "text/css" href = "./CSS/Style.css" media = "screen"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+	</head>
+	<body class = "cuerpo">
+		<div class = "contenido" id = "contenido" style = "display:none">
+		</div>
+		<div class = "cerrarContenido" id = "tachita" onclick = "adiosContenido()" style = "display:none">
+			<img width = "20px" height = "20px" src =  "./Media/Imagenes/tachita.png"/>	
+		</div>
+		<!-- Banner de la pagina -->
+		<div class = "banner">
+			<div class = "blanco">Arquitectura de Computadoras</div>
+		</div>
+		<!-- Boton para desplegar el menu y ocultarlo -->
+		<div class = "desplegar" id = "iconoAbrir" style = "display:block">
+			<img class = "icono" src =  "./Media/Imagenes/abrir.png" onclick = "desplegarMenu()"/>
+		</div>
+		<div class = "desplegar" id = "iconoCerrar" style = "display:none">
+			<img class = "icono" src =  "./Media/Imagenes/cerrar.png" onclick = "ocultarMenu()"/>
+		</div>
+		<!-- Icono del ITS para menu de redes-->
+		<div class = "redes" id = "itsAbrir" style = "display:block">
+			<img width = "85px" height = "80px" src =  "./Media/Imagenes/its.png" onclick = "desplegarRedes()"/>
+		</div>
+		<div class = "redes" id = "itsCerrar" style = "display:none">
+			<img width = "85px" height = "80px" src =  "./Media/Imagenes/its.png" onclick = "ocultarRedes()"/>
+		</div>
+		<!-- Menu de Redes -->
+		<div class = "menuRedes" id = "menuRedes" style = "display:none">
+			<br>
+			<center><a href = "http://its.mx/"><img width = "50px" height = "50px" src =  "./Media/Imagenes/internet.png"/></a></center><br>
+			<center><a href = " https://www.facebook.com/TecNMcampusSaltillo/"><img width = "44px" height = "44px" src =  "./Media/Imagenes/facebook.png"/></a></center><br>
+			<center><a href = "https://www.youtube.com/channel/UCf4pqcU7cOI8emhhoeYoVVw"><img width = "44px" height = "44px" src =  "./Media/Imagenes/youtube.png"/></a></center>
+		</div>
+		<!-- Menu de opciones -->
+		<div class = "menu" id = "menu" style = "display:none">
+			<div class = "opcion">
+				Menu
+			</div>
+			<div class = "opcion sobresaltar" onclick = "abrirUnidad1()">
+				Unidad 1
+			</div>
+			<div class = "opcion sobresaltar" onclick = "abrirUnidad2()">
+				Unidad 2
+			</div>
+			<div class = "opcion sobresaltar" onclick = "abrirUnidad3()">
+				Unidad 3
+			</div>
+			<div class = "opcion sobresaltar" onclick = "abrirUnidad4()">
+				Unidad 4
+			</div>
+			<div class = "opcion sobresaltar" onclick = "abrirPracticas()">
+				Practicas
+			</div>
+			<div class = "opcion sobresaltar" onclick = "abrirContacto()">
+				Contacto
+			</div>
+		</div>
+		<!-- Menu con el temario de la Unidad 1 -->
+		<div class = "menu" id = "menu1" style = "display:none">
+			<div class = "opcion sobresaltar" onclick = "cerrarUnidades()">
+				Regresar al Menu
+			</div>
+			<div class = "temario">
+				Unidad 1<br>
+				<a class = "link" onclick = "uno()">1.1 Modelos de Arquitecturas de Computo</a><br>
+				&nbsp;1.1.1 Clasicas<br>
+				&nbsp;<a class = "link" onclick = "dos()">1.1.2 Segmentadas</a><br>
+				&nbsp;<a class = "link" onclick = "tres()">1.1.3 Multiprocesamiento</a><br>
+				<a class = "link" onclick = "cuatro()">1.2 Analisis de los componentes</a><br>
+				&nbsp;1.2.1 Arquitecturas<br>
+				&nbsp;&nbsp;<a class = "link" onclick = "cinco()">1.2.1.1 Unidad Central de Procesamiento (CPU)</a><br>
+				&nbsp;&nbsp;<a class = "link" onclick = "seis()">1.2.1.2 Unidad Aritmetica Logica (ALU)</a><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class = "link" onclick = "siete()">Unidad de Control</a><br>
+				&nbsp;&nbsp;<a class = "link" onclick = "ocho()">1.2.1.3 Registros</a><br>
+				&nbsp;&nbsp;1.2.1.4 Buses<br>
+				&nbsp;<a class = "link" onclick = "diez()">1.2.2 Memoria</a><br>
+				&nbsp;&nbsp;1.2.2.1 Manejo de memoria<br>
+				&nbsp;&nbsp;1.2.2.2 Memoria Principal<br>
+				&nbsp;&nbsp;1.2.2.3 Memoria Cache<br>
+				&nbsp;1.2.3 Manejo de Entrada/Salida<br>
+				&nbsp;&nbsp;<a class = "link" onclick = "once()">1.2.3.1 Modulos de Entrada/Salida E/S</a><br>
+				&nbsp;&nbsp;1.2.3.2 E/S Programada<br>
+				&nbsp;&nbsp;1.2.3.3 E/S mediante interruptores<br>
+				&nbsp;&nbsp;1.2.3.4 Acceso directo a memoria<br>
+				&nbsp;&nbsp;1.2.3.5 Canales de E/S<br>
+				&nbsp;<a class = "link" onclick = "nueve()">1.2.4 Buses</a><br>
+				&nbsp;&nbsp;1.2.4.1 Tipos de buses<br>
+				&nbsp;&nbsp;1.2.4.2 Estructura de los buses<br>
+				&nbsp;&nbsp;1.2.4.3 Jerarquia de buses<br>
+				&nbsp;&nbsp;1.2.5 Interrupciones<br>
+			</div>
+		</div>
+		<!-- Menu con el temario de la Unidad 2 -->
+		<div class = "menu" id = "menu2" style = "display:none">
+			<div class = "opcion sobresaltar" onclick = "cerrarUnidades()">
+				Regresar al Menu
+			</div>
+			<div class = "temario">
+				Unidad 2<br>
+				Estructura y funcionamiento del CPU<br>
+				2.1 Organizacion del procesador<br>
+				2.2 Estructura de registros<br>
+				&nbsp;2.2.1 Registros visibles para el usuario<br>
+				&nbsp;2.2.2 Registros de control y de estados<br>
+				&nbsp;2.2.3 Registro (Ejemplos)<br>
+				<a class = "link" onclick = "doce()">2.3 El Ciclo de la Instruccion</a><br>
+				&nbsp;2.3.1 Ciclo Fetch-Decode-Execute<br>
+				&nbsp;2.3.2 Segmentacion de instrucciones<br>
+				&nbsp;2.3.3 Conjunto de instrucciones<br>
+				&nbsp;<a class = "link" onclick = "trece()">2.3.4 Modos de direccionamiento</a><br>
+				2.4 Casos de Estudio de CPU reales<br>
+			</div>
+		</div>
+		<!-- Menu con el temario de la Unidad 3 -->
+		<div class = "menu" id = "menu3" style = "display:none">
+			<div class = "opcion sobresaltar" onclick = "cerrarUnidades()">
+				Regresar al Menu
+			</div>
+			<div class = "temario">
+				Unidad 3<br>
+				Seleccion de componentes de ensamble de equipo de computo<br>
+				<a class = "link" onclick = "catorce()">3.1 Chipset</a><br>
+				&nbsp;3.1.1 Unidad Central de Procesamiento (CPU)<br>
+				&nbsp;3.1.2 Controlador de Bus<br>
+				&nbsp;3.1.3 Conjunto de Entrada/Salida E/S<br>
+				&nbsp;3.1.4 Controlador de interrupciones<br>
+				&nbsp;3.1.5 Controlador de acceso directo a memoria (DMA)<br>
+				&nbsp;3.1.6 Circuitos de control<br>
+				&nbsp;3.1.7 Circuitos de temporizacion<br>
+				&nbsp;3.1.8 Controladores de video<br>
+				3.2 Aplicaciones<br>
+				&nbsp;<a class = "link" onclick = "quince()">3.2.1 Entrada/Salida</a><br>
+				&nbsp;3.2.2 Almacenamiento<br>
+				&nbsp;3.2.3 Fuentes de alimentacion<br>
+				<a class = "link" onclick = "dieciseis()">3.3 Ambientes de Servicio</a><br>
+				&nbsp;3.3.1 Negocios<br>
+				&nbsp;3.3.2 Industria<br>
+				&nbsp;3.3.3 Comercio electronico<br>
+			</div>
+		</div>
+		<!-- Menu con el temario de la Unidad 4 -->
+		<div class = "menu" id = "menu4" style = "display:none">
+			<div class = "opcion sobresaltar" onclick = "cerrarUnidades()">
+				Regresar al Menu
+			</div>
+			<div class = "temario">
+				Unidad 4<br>
+				Procesamiento Paralelo<br>
+				<a class = "link" onclick = "diecisiete()">4.1 Aspectos basicos de la computacion paralela</a><br>
+				<a class = "link" onclick = "dieciocho()">4.2 Tipos de computacion paralela</a><br>
+				&nbsp;4.2.1 Clasificacion<br>
+				&nbsp;4.2.2 Arquitectura de computadoras secuenciales<br>
+				&nbsp;4.2.3 Organizacion de direcciones de memoria<br>
+				<a class = "link" onclick = "diecinueve()">4.3 Sistemas de Memoria Compartida: Multiprocesadores</a><br>
+				&nbsp;4.3.1 Redes de Interconexion Dinamicas o Indirectas<br>
+				&nbsp;&nbsp;4.3.1.1 Redes de Medio Compartido<br>
+				&nbsp;&nbsp;4.3.1.1 Redes Conmutadas<br>
+				<a class = "link" onclick = "veinte()">4.4 Sistemas de Memoria Distribuida: Multicomputadores</a><br>
+				&nbsp;4.4.1 Redes de Interconexion Estaticas<br>
+				4.5 Casos de Estudio<br>
+			</div>
+		</div>
+		<!-- Menu para las practicas -->
+		<div class = "menu" id = "practicas" style = "display:none">
+			<div class = "opcion sobresaltar" onclick = "cerrarUnidades()">
+				Regresar al Menu
+			</div>
+			<div class = "temario">
+				Practicas<br>
+				<a class = "link" onclick = "practica1()">1 Componentes basicos de una computadora</a><br>
+				<a class = "link" onclick = "practica2()">2 Procesadores</a><br>
+				<a class = "link" onclick = "practica3()">3 Memorias</a><br>
+				<a class = "link" onclick = "practica4()">4 Armado de Computadoras de Escritorio</a><br>
+				<a class = "link" onclick = "practica5()">5 Ensamble de Laptop</a><br>
+			</div>
+		</div>
+		<!-- Mi informacion -->
+		<div class = "menu" id = "informacion" style = "display:none">
+			<div class = "opcion sobresaltar" onclick = "cerrarUnidades()">
+				Regresar al Menu
+			</div>
+			<div class = "temario">
+				<br>
+				<p class = "negrita">Rogelio Fernando Cisneros Garibo</p>
+				<center>Correo Personal:</center>
+				<center>rogeliocisnerosgaribo@gmail.com</center><br>
+				<center>Correo Institucional:</center>
+				<center>L20051158@saltillo.tecnm.mx</center><br>
+				<center>Celular:</center>
+				<center>866 175 13 67</center>
+			</div>
+		</div>
+		<script>
+			function desplegarMenu(){
+				document.getElementById("menu").style.display = "block";
+				document.getElementById("iconoAbrir").style.display = "none";
+				document.getElementById("iconoCerrar").style.display = "block";
+			}
+			function ocultarMenu(){
+				document.getElementById("menu").style.display = "none";
+				document.getElementById("iconoAbrir").style.display = "block";
+				document.getElementById("iconoCerrar").style.display = "none";
+				document.getElementById("menu1").style.display = "none";
+				document.getElementById("menu2").style.display = "none";
+				document.getElementById("menu3").style.display = "none";
+				document.getElementById("menu4").style.display = "none";
+				document.getElementById("practicas").style.display = "none";
+				document.getElementById("informacion").style.display = "none";
+			}
+			function abrirUnidad1(){
+				document.getElementById("menu").style.display = "none";
+				document.getElementById("menu1").style.display = "block";
+			}
+			function abrirUnidad2(){
+				document.getElementById("menu").style.display = "none";
+				document.getElementById("menu2").style.display = "block";
+			}
+			function abrirUnidad3(){
+				document.getElementById("menu").style.display = "none";
+				document.getElementById("menu3").style.display = "block";
+			}
+			function abrirUnidad4(){
+				document.getElementById("menu").style.display = "none";
+				document.getElementById("menu4").style.display = "block";
+			}
+			function abrirPracticas(){
+				document.getElementById("menu").style.display = "none";
+				document.getElementById("practicas").style.display = "block";
+			}
+			function abrirContacto(){
+				document.getElementById("menu").style.display = "none";
+				document.getElementById("informacion").style.display = "block";
+			}
+			function cerrarUnidades(){
+				document.getElementById("menu1").style.display = "none";
+				document.getElementById("menu2").style.display = "none";
+				document.getElementById("menu3").style.display = "none";
+				document.getElementById("menu4").style.display = "none";
+				document.getElementById("practicas").style.display = "none";
+				document.getElementById("informacion").style.display = "none";
+				document.getElementById("menu").style.display = "block";
+			}
+			function practica1(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>1. Componentes basicos de una computadora</strong><br><br>" + "<object data = './Media/Archivos/Practica 1 Componentes basicos.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function practica2(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>2. Procesadores</strong><br><br>" + "<object data = './Media/Archivos/Practica 2 Procesadores.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function practica3(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>3. Memorias</strong><br><br>" + "<object data = './Media/Archivos/Practica 3 Memorias.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function practica4(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>4. Armado de Computadoras de Escritorio</strong><br><br>" + "<object data = './Media/Archivos/Practica 4 Armado de PC.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function practica5(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>5. Ensamble de Laptop</strong><br><br>" + "<object data = './Media/Archivos/Practica 5 Ensamble de laptop.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function uno(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>1.1 Modelos de Arquitecturas de Computo</strong><br><br>" + "<object data = './Media/Archivos/1.1Tema 1.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function dos(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>1.1.2 Segmentadas</strong><br><br>" + "<object data = './Media/Archivos/1.1.2 AC.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function tres(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>1.1.3 Multiprocesamiento</strong><br><br>" + "<object data = './Media/Archivos/1.1.3.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function cuatro(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>1.2 Analisis de Componentes</strong><br><br>" + "<object data = './Media/Archivos/1.2 Analisis de componentes.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function cinco(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>1.2.1.1 Unidad Central de Procesamiento (CPU)</strong><br><br>" + "<object data = './Media/Archivos/1.2.1.1 CPU.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function seis(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>1.2.1.2 Unidad Aritmetica Logica (ALU)</strong><br><br>" + "<object data = './Media/Archivos/1.2.1.2 ALU.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function siete(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>1.2.1.2 Unidad de Control</strong><br><br>" + "<object data = './Media/Archivos/Unidad de Control.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function ocho(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>1.2.1.3 Registros</strong><br><br>" + "<object data = './Media/Archivos/Registros del Procesador.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function nueve(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>1.2.1.4 Buses</strong><br><br>" + "<object data = './Media/Archivos/Buses.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function diez(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>1.2.2 Memoria</strong><br><br>" + "<object data = './Media/Archivos/Memoria.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function once(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>1.2.3.1 Modulos de Entrada/Salida E/S</strong><br><br>" + "<object data = './Media/Archivos/Entrada-Salida.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function doce(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>2.3 El Ciclo de la Instruccion</strong><br><br>" + "<object data = './Media/Archivos/Ciclo de instruccion.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function trece(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>2.3.4 Modos de Direccionamiento</strong><br><br>" + "<object data = './Media/Archivos/2.4 Modos de direccionamiento.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function catorce(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>3.1 Chipset</strong><br><br>" + "<object data = './Media/Archivos/3.1 Chipset.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function quince(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>3.2.1 Entrada/Salida</strong><br><br>" + "<object data = './Media/Archivos/3.2.1 E-S.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function dieciseis(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>3.3 Ambientes de Servicio</strong><br><br>" + "<object data = './Media/Archivos/3.3 Ambiente de servicio.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function diecisiete(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>4.1 Aspectos Basicos de la Computacion Paralela</strong><br><br>" + "<object data = './Media/Archivos/4.1 Procesamiento paralelo.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function dieciocho(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>4.2 Tipos de Computacion Parelela</strong><br><br>" + "<object data = './Media/Archivos/4.2 Tipos.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function diecinueve(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>4.3 Sistemas de Memoria Compartida (Multiprocesadores)</strong><br><br>" + "<object data = './Media/Archivos/4.3 Sistemas.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function veinte(){
+				document.getElementById("contenido").style.display = "block";
+				document.getElementById("tachita").style.display = "block";
+				document.getElementById("contenido").innerHTML = "<strong>4.4 Sistemas de Memoria Distribuida (Multicomputadores)</strong><br><br>" + "<object data = './Media/Archivos/4.4 Sistemas multicomputadores.pdf' width = '600px' height = '400px'></object>";
+				ocultarMenu();
+			}
+			function desplegarRedes(){
+				document.getElementById("menuRedes").style.display = "block";
+				document.getElementById("itsAbrir").style.display = "none";
+				document.getElementById("itsCerrar").style.display = "block";
+			}
+			function ocultarRedes(){
+				document.getElementById("menuRedes").style.display = "none";
+				document.getElementById("itsAbrir").style.display = "block";
+				document.getElementById("itsCerrar").style.display = "none";
+			}
+			function adiosContenido(){
+				document.getElementById("contenido").style.display = "none";
+				document.getElementById("tachita").style.display = "none";
+			}
+		</script>
+	</body>
+</html>
